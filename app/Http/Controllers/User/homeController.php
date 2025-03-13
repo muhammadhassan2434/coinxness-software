@@ -17,7 +17,11 @@ class homeController extends Controller
 
         $earned = $user->balance - $user->capital;
 
-        return view('user.home', compact('user','earned'));
+        $withdrawls = Withdrawl::where('user_id', $user->id)->where('status', 'approved')->get();
+
+        $withdrawl = $withdrawls->sum('amount');
+
+        return view('user.home', compact('user','earned','withdrawl'));
     }
 
 

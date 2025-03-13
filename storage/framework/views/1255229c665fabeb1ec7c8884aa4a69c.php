@@ -29,6 +29,14 @@
                         </a>
                     </li>
 
+                    <li class="nav-item">
+
+                        <a href="<?php echo e(route('all.withdraw.requests')); ?>" class="nav-link">
+                            <i class="nav-icon fas fa-file-alt"></i>
+                            <p>Withdraws Requests</p>
+                        </a>
+                    </li>
+
 
             </ul>
         </nav>

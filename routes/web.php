@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\authController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\UserContoller;
+use App\Http\Controllers\admin\withdrawController;
 use App\Http\Controllers\user\AuthticateController;
 use App\Http\Controllers\User\homeController;
 use App\Http\Middleware\AdminAuthMiddleware;
@@ -41,6 +42,11 @@ Route::middleware(AdminAuthMiddleware::class)->group(function () {
     Route::delete('user/destroy/{id}', [UserContoller::class, 'destroy'])->name('user.destroy');
     Route::put('/user/update-profit/{id}', [UserContoller::class, 'updateProfit'])->name('user.update-profit');
     Route::put('/user/update-loss/{id}', [UserContoller::class, 'updateLoss']);
+    
+    
+    // withdraws requests
+    Route::get('withdraw/requests', [withdrawController::class, 'index'])->name('all.withdraw.requests');
+    Route::get('withdraw/approve/{id}', [withdrawController::class, 'approve'])->name('withdraw.approve');
 });
 
 

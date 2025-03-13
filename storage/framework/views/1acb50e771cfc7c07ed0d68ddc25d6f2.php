@@ -24,8 +24,6 @@
             <div class="card">
                 <form action="<?php echo e(route('user.index')); ?>" method="GET">
                     <div class="card-header">
-                        
-                        
                     </div>
                 </form>
                 <div class="card-body table-responsive p-0">
