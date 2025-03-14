@@ -27,10 +27,10 @@ Route::get('user/logout', [AuthticateController::class, 'logout'])->name('user.l
 
 
 // admin routes
-Route::middleware(AdminAuthMiddleware::class)->prefix('admin')->group(function () {
+Route::middleware(AdminAuthMiddleware::class)->group(function () {
     
     // dashboard routes
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('dashboard', [DashboardController::class, 'index'])->prefix('admin')->name('dashboard.index');
     
     // user routes
     Route::get('user', [UserContoller::class, 'index'])->name('user.index');

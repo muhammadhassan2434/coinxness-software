@@ -44,7 +44,8 @@
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        10
+                                        <?php echo e(Auth::user()->name); ?>
+
                                     </h2>
                                 </div>
 
@@ -63,7 +64,8 @@
                         <div class="row align-items-center mb-2 d-flex">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    578
+                                    <?php echo e(Auth::user()->balance); ?>
+
                                 </h2>
                             </div>
 
@@ -82,7 +84,8 @@
                         <div class="row align-items-center mb-2 d-flex">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    $11.61k
+                                    <?php echo e(Auth::user()->capital); ?>
+
                                 </h2>
                             </div>
 

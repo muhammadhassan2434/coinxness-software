@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Logout</a>
+                        <a class="nav-link active" aria-current="page" href="<?php echo e(route('user.logout')); ?>">Logout</a>
                     </li>
                     
                 </ul>
@@ -44,7 +44,8 @@
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        10
+                                        <?php echo e(ucwords(Auth::user()->name)); ?>
+
                                     </h2>
                                 </div>
 
@@ -63,7 +64,8 @@
                         <div class="row align-items-center mb-2 d-flex">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    578
+                                    <?php echo e(Auth::user()->balance); ?>
+
                                 </h2>
                             </div>
 
@@ -82,7 +84,8 @@
                         <div class="row align-items-center mb-2 d-flex">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    $11.61k
+                                    <?php echo e(Auth::user()->capital); ?>
+
                                 </h2>
                             </div>
 
@@ -100,7 +103,7 @@
                         <div class="row align-items-center mb-2 d-flex">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    3,243
+                                    None
                                 </h2>
                             </div>
                             

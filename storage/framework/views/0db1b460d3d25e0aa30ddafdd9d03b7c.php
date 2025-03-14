@@ -21,7 +21,7 @@
 			  	</div>
 			  	<div class="card-body">
 					<p class="login-box-msg">Sign in to start your session</p>
-					<form action="<?php echo e(route('admin.auth')); ?>" method="post">
+					<form action="<?php echo e(route('user.auth')); ?>" method="post">
                         <?php echo csrf_field(); ?>
 				  		<div class="input-group mb-3">
 							<input type="email" value="<?php echo e(old('email')); ?>" name="email" id="email" class="form-control <?php $__errorArgs = ['email'];
