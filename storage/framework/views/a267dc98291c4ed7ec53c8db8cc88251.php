@@ -4,24 +4,24 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>CionXness </title>
-		{{-- bootstrap css cdn --}}
+		
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 		<!-- Google Font: Source Sans Pro -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 		<!-- Font Awesome -->
-		<link rel="stylesheet" href="{{asset('plugins/dropzone/min/dropzone.min.css')}}">
+		<link rel="stylesheet" href="<?php echo e(asset('plugins/dropzone/min/dropzone.min.css')); ?>">
 		<!-- Theme style -->
-		<link rel="stylesheet" href="{{asset('css/adminlte.min.css')}}">
+		<link rel="stylesheet" href="<?php echo e(asset('css/adminlte.min.css')); ?>">
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-		<link rel="stylesheet" href="{{asset('plugins/summernote/summernote.min.css')}}">
+		<link rel="stylesheet" href="<?php echo e(asset('plugins/summernote/summernote.min.css')); ?>">
 
-		<link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
+		<link rel="stylesheet" href="<?php echo e(asset('plugins/select2/css/select2.min.css')); ?>">
 
-		<link rel="stylesheet" href="{{asset('css/custom.css')}}">
+		<link rel="stylesheet" href="<?php echo e(asset('css/custom.css')); ?>">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<meta name="csrf-token" content="{{csrf_token()}}">
+		<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
 		<!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -56,28 +56,21 @@
 					<li class="nav-item dropdown">
 						<!-- Dropdown Toggle Button -->
 						<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<img src="{{ asset('img/avatar5.png') }}" class="img-circle elevation-2" width="40" height="40" alt="User Avatar">
+							<img src="<?php echo e(asset('img/avatar5.png')); ?>" class="img-circle elevation-2" width="40" height="40" alt="User Avatar">
 						</a>
 					
 						<!-- Dropdown Menu -->
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
 							<!-- User's Name -->
-							<h6 class="dropdown-header">{{ Auth::user()->name }}</h6>
+							<h6 class="dropdown-header"><?php echo e(Auth::user()->name); ?></h6>
 							<!-- User's Email -->
-							<div class="dropdown-item disabled">{{ Auth::user()->email }}</div>
+							<div class="dropdown-item disabled"><?php echo e(Auth::user()->email); ?></div>
 					
 							<div class="dropdown-divider"></div>
-							{{-- <a href="#" class="dropdown-item">
-								<i class="fas fa-user-cog mr-2"></i> Settings
-							</a>
+							
 					
 							<div class="dropdown-divider"></div>
-							<a href="#" class="dropdown-item">
-								<i class="fas fa-lock mr-2"></i> Change Password
-							</a> --}}
-					
-							<div class="dropdown-divider"></div>
-							<a href="{{ route('admin.logout') }}" class="dropdown-item text-danger">
+							<a href="<?php echo e(route('admin.logout')); ?>" class="dropdown-item text-danger">
 								<i class="fas fa-sign-out-alt mr-2"></i> Logout
 							</a>
 						</div>
@@ -87,10 +80,10 @@
 				</ul>
 			</nav>
 			<!-- /.navbar -->
-			@include('admin.layouts.sidebar')
+			<?php echo $__env->make('admin.layouts.sidebar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper">
-				@yield('content')
+				<?php echo $__env->yieldContent('content'); ?>
 			</div>
 			<!-- /.content-wrapper -->
 			<footer class="main-footer">
@@ -101,11 +94,11 @@
 		</div>
 		<!-- ./wrapper -->
 		<!-- jQuery -->
-		<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+		<script src="<?php echo e(asset('plugins/jquery/jquery.min.js')); ?>"></script>
 		<!-- Bootstrap 4 -->
-		<script src="{{asset("plugins/dropzone/min/dropzone.min.js")}}"></script>
-		<script src="{{asset("plugins/summernote/summernote.min.js")}}"></script>
-		<script src="{{asset("plugins/select2/js/select2.min.js")}}"></script>
+		<script src="<?php echo e(asset("plugins/dropzone/min/dropzone.min.js")); ?>"></script>
+		<script src="<?php echo e(asset("plugins/summernote/summernote.min.js")); ?>"></script>
+		<script src="<?php echo e(asset("plugins/select2/js/select2.min.js")); ?>"></script>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -113,9 +106,9 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 
-		<script src="{{asset('js/adminlte.min.js')}}"></script>
+		<script src="<?php echo e(asset('js/adminlte.min.js')); ?>"></script>
 		<!-- AdminLTE for demo purposes -->
-		<script src="{{asset("js/demo.js")}}"></script>
+		<script src="<?php echo e(asset("js/demo.js")); ?>"></script>
 		
 		<script type="text/javascript">
 			$.ajaxSetup({
@@ -130,6 +123,6 @@
 			// 	})
 			// });
 	</script>
-        @yield('customjs')
+        <?php echo $__env->yieldContent('customjs'); ?>
 	</body>
-</html>
+</html><?php /**PATH E:\laravel\tradeSoftware\resources\views\admin\layouts\app.blade.php ENDPATH**/ ?>

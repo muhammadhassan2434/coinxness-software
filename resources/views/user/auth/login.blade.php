@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Coinxness :: Administrative Panel</title>
+		<title>Coinxness :: Login</title>
 		<!-- Google Font: Source Sans Pro -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 		<!-- Font Awesome -->
@@ -17,11 +17,11 @@
 			<!-- /.login-logo -->
 			<div class="card card-outline card-primary">
 			  	<div class="card-header text-center">
-					<a href="#" class="h3">Administrative Panel</a>
+					<a href="#" class="h3">Coinxness</a>
 			  	</div>
 			  	<div class="card-body">
 					<p class="login-box-msg">Sign in to start your session</p>
-					<form action="{{ route('admin.auth') }}" method="post">
+					<form action="{{ route('user.auth') }}" method="post">
                         @csrf
 				  		<div class="input-group mb-3">
 							<input type="email" value="{{old('email')}}" name="email" id="email" class="form-control @error('email')is-invalid
@@ -49,15 +49,7 @@
                           <p class="invalid-feedback">{{ $message }}</p>
                       @enderror
 				  		<div class="row">
-							<!-- <div class="col-8">
-					  			<div class="icheck-primary">
-									<input type="checkbox" id="remember">
-									<label for="remember">
-						  				Remember Me
-									</label>
-					  			</div>
-							</div> -->
-							<!-- /.col -->
+							
 							<div class="col-4">
 					  			<button type="submit" class="btn btn-primary btn-block">Login</button>
 							</div>
@@ -65,7 +57,6 @@
 				  		</div>
 					</form>
 		  			<p class="mb-1 mt-3">
-				  		{{-- <a href="forgot-password.html">I forgot my password</a> --}}
 					</p>					
 			  	</div>
 			  	<!-- /.card-body -->

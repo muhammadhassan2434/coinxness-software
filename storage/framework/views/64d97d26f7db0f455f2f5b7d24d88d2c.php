@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-        <img src="{{ asset('img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        <img src="<?php echo e(asset('img/AdminLTELogo.png')); ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">CionXness </span>
     </a>
@@ -15,7 +15,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                     <li class="nav-item">
-                        <a href="{{route('dashboard.index')}}" class="nav-link">
+                        <a href="<?php echo e(route('dashboard.index')); ?>" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>Dashboard</p>
                         </a>
@@ -23,7 +23,7 @@
 
                     <li class="nav-item">
 
-                        <a href="{{ route('user.index') }}" class="nav-link">
+                        <a href="<?php echo e(route('user.index')); ?>" class="nav-link">
                             <i class="nav-icon fas fa-file-alt"></i>
                             <p>User</p>
                         </a>
@@ -36,3 +36,4 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+<?php /**PATH E:\laravel\tradeSoftware\resources\views/admin/layouts/sidebar.blade.php ENDPATH**/ ?>
