@@ -47,6 +47,9 @@ Route::middleware(AdminAuthMiddleware::class)->group(function () {
     // withdraws requests
     Route::get('withdraw/requests', [withdrawController::class, 'index'])->name('all.withdraw.requests');
     Route::get('withdraw/approve/{id}', [withdrawController::class, 'approve'])->name('withdraw.approve');
+    Route::get('withdraw/approved', [withdrawController::class, 'approved'])->name('withdraw.approved');
+
+
 });
 
 

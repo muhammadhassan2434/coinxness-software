@@ -19,4 +19,11 @@ class withdrawController extends Controller
         $request->save();
         return redirect()->back();
     }
+
+
+    public function approved(){
+        $withdraws = Withdrawl::where('status', 'approved')->get();
+
+        return view('admin.withdrawrequests.approvedwithdraw', compact('withdraws'));
+    }
 }

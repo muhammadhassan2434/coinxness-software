@@ -72,7 +72,8 @@
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        None
+                                        <?php echo e($withdrawl); ?>
+
                                     </h2>
                                 </div>
 

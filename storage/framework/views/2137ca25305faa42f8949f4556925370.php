@@ -19,56 +19,52 @@
         <!-- Default box -->
         <div class="container-fluid">
 
-
-
             <div class="card">
-                <form action="<?php echo e(route('user.index')); ?>" method="GET">
-                    <div class="card-header">
-
-                    </div>
-                </form>
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap">
-                        <thead>
-                            <tr>
-                                <th width="60">ID</th>
-                                <th>Name</th>
-                                <th>Amount</th>
-                                <th>Request Date</th>
-                                <th width="100">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if($requests->isNotEmpty()): ?>
-                                <?php $__currentLoopData = $requests; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <tr>
-                                        <td><?php echo e($item->id); ?></td>
-                                        <td><?php echo e($item->user->name ?? 'N/A'); ?></td>
-                                        <td><?php echo e($item->amount ?? 'N/A'); ?></td>
-                                        <td><?php echo e($item->created_at ?? 'N/A'); ?></td>
-                                        <td>
-                                            <a href="<?php echo e(route('withdraw.approve',$item->id)); ?>" class="btn btn-primary">Approve</a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            <?php else: ?>
+            </div>
+            </form>
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th width="60">ID</th>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Request Date</th>
+                            <th width="100">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if($requests->isNotEmpty()): ?>
+                            <?php $__currentLoopData = $requests; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
-                                    <td colspan="5" class="text-danger text-center">
-                                        <h1>Rcords not found</h1>
+                                    <td><?php echo e($item->id); ?></td>
+                                    <td><?php echo e($item->user->name ?? 'N/A'); ?></td>
+                                    <td><?php echo e($item->amount ?? 'N/A'); ?></td>
+                                    <td><?php echo e($item->created_at ?? 'N/A'); ?></td>
+                                    <td>
+                                        <a href="<?php echo e(route('withdraw.approve', $item->id)); ?>"
+                                            class="btn btn-primary">Approve</a>
                                     </td>
                                 </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="card-footer clearfix">
-                    
-
-                </div>
-
-
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="5" class="text-danger text-center">
+                                    <h1>Rcords not found</h1>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer clearfix">
+                
 
             </div>
+
+
+
+        </div>
         </div>
         <!-- /.card -->
     </section>

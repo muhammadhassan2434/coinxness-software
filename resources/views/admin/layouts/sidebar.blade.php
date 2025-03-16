@@ -30,10 +30,15 @@
                     </li>
 
                     <li class="nav-item">
-
                         <a href="{{ route('all.withdraw.requests') }}" class="nav-link">
                             <i class="nav-icon fas fa-file-alt"></i>
                             <p>Withdraws Requests</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('withdraw.approved') }}" class="nav-link">
+                            <i class="nav-icon fas fa-file-alt"></i>
+                            <p>Withdraws Approved</p>
                         </a>
                     </li>
 
