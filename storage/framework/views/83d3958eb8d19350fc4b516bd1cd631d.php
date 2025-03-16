@@ -14,11 +14,11 @@
 <body>
 
     
-    <div class="container">
+    <div class="container ">
         <div class="row">
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="<?php echo e(route('welcome')); ?>">Coinxness</a>
+                    <a class="navbar-brand" href="<?php echo e(route('welcome')); ?>"><img src="<?php echo e(asset('img/logo.png')); ?>" width="150px" alt=""></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="<?php echo e(route('user.dashboard')); ?>">Dashboard</a>
+                                <a class="nav-link active" aria-current="page" href="<?php echo e(route('user.account')); ?>">Dashboard</a>
                             </li>
                             
                             </li>
@@ -39,15 +39,15 @@
 
 
     
-    <div class="container col-xxl-8 px-4 py-5">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="container px-4 ">
+        <div class="row flex-lg-row-reverse align-items-center g-5 ">
             <div class="col-10 col-sm-8 col-lg-6">
-                <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="About"
+                <img src="<?php echo e(asset('img/image1.png')); ?>" class="d-block mx-lg-auto img-fluid" width="500px" alt="About"
                     width="700" height="500" loading="lazy">
             </div>
             <div class="col-lg-6">
                 <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About CoinXness</h1>
-                <p class="lead text-justify">CoinXness empowers traders with cutting-edge forex solutions. We provide access to global markets through advanced platforms and expert analysis. Our focus is on transparency, reliability, and personalized support, enabling clients to navigate the complexities of forex trading with confidence. We aim to foster a community of informed and successful traders, leveraging technology and expertise for optimal results. We prioritize secure and efficient trading experiences, built on a foundation of integrity and client trust.
+                <p class="lead ">CoinXness empowers traders with cutting-edge forex solutions. We provide access to global markets through advanced platforms and expert analysis. Our focus is on transparency, reliability, and personalized support, enabling clients to navigate the complexities of forex trading with confidence. We aim to foster a community of informed and successful traders, leveraging technology and expertise for optimal results. We prioritize secure and efficient trading experiences, built on a foundation of integrity and client trust.
                 </p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                     
@@ -58,11 +58,11 @@
     </div>
 
     
-    <section class="py-3 py-md-5">
+    <section>
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                 <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy" src="./assets/img/about-img-1.jpg" alt="About 1">
+                    <img class="img-fluid rounded" loading="lazy" src="<?php echo e(asset('img/image2.png')); ?>" alt="About 1">
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">

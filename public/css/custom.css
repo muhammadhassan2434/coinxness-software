@@ -116,3 +116,6 @@ a{
   color: #fff;
 }
 
+.metismenu a {
+  color: black !important;
+}

@@ -10,11 +10,11 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="<?php echo e(route('user.logout')); ?>">Logout</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route('user.logout') }}">Logout</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
-</div><?php /**PATH E:\laravel\tradeSoftware\resources\views/user/layout/header.blade.php ENDPATH**/ ?>
+</div>

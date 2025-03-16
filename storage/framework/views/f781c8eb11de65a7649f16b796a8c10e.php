@@ -24,7 +24,8 @@
             <div class="card">
                 <form action="<?php echo e(route('user.index')); ?>" method="GET">
                     <div class="card-header">
-                     
+                        
+                        
                     </div>
                 </form>
                 <div class="card-body table-responsive p-0">
@@ -264,4 +265,4 @@
     </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('admin.layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH E:\laravel\tradeSoftware\resources\views\user\account\index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH E:\laravel\tradeSoftware\resources\views/admin/users/index.blade.php ENDPATH**/ ?>

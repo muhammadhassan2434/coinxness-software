@@ -1,39 +1,43 @@
-<!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="#" class="brand-link">
-        <img src="<?php echo e(asset('img/AdminLTELogo.png')); ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
-        <span class="brand-text font-weight-light">CionXness </span>
-    </a>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <!-- Sidebar user (optional) -->
-        <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-                    with font-awesome or any other icon font library -->
-                    <li class="nav-item">
-                        <a href="<?php echo e(route('dashboard.index')); ?>" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
+<div class="dlabnav">
+    <div class="dlabnav-scroll">
+        <ul class="metismenu" id="menu">
+            <li class="nav-label first text-muted">Main Menu</li>
+            
+            <li>
+                <a href="<?php echo e(route('user.account')); ?>" class="text-dark" aria-expanded="false">
+                    <i class="la la-user"></i>
+                    <span class="nav-text">User Account</span>
+                </a>
+            </li>
 
-                    <li class="nav-item">
+            <li>
+                <a href="<?php echo e(route('user.account')); ?>" class="text-dark" aria-expanded="false">
+                    <i class="la la-money"></i>
+                    <span class="nav-text">Make a Deposit</span>
+                </a>
+            </li>
 
-                        <a href="<?php echo e(route('user.index')); ?>" class="nav-link">
-                            <i class="nav-icon fas fa-file-alt"></i>
-                            <p>User</p>
-                        </a>
-                    </li>
+            <li>
+                <a href="<?php echo e(route('user.withdraw')); ?>" class="text-dark" aria-expanded="false">
+                    <i class="la la-credit-card"></i>
+                    <span class="nav-text">Withdrawal</span>
+                </a>
+            </li>
 
+            <li>
+                <a href="<?php echo e(route('user.account')); ?>" class="text-dark" aria-expanded="false">
+                    <i class="la la-exchange-alt"></i>
+                    <span class="nav-text">User Transactions</span>
+                </a>
+            </li>
 
-            </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
+            <li>
+                <a href="<?php echo e(route('user.account')); ?>" class="text-dark" aria-expanded="false">
+                    <i class="la la-life-ring"></i>
+                    <span class="nav-text">Support</span>
+                </a>
+            </li>
+        </ul>
     </div>
-    <!-- /.sidebar -->
-</aside>
+</div>
 <?php /**PATH E:\laravel\tradeSoftware\resources\views\user\layout\sidebar.blade.php ENDPATH**/ ?>

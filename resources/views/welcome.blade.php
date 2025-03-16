@@ -14,11 +14,11 @@
 <body>
 
     {{-- navbar  --}}
-    <div class="container">
+    <div class="container ">
         <div class="row">
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{{route('welcome')}}">Coinxness</a>
+                    <a class="navbar-brand" href="{{route('welcome')}}"><img src="{{asset('img/logo.png')}}" width="150px" alt=""></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{route('user.dashboard')}}">Dashboard</a>
+                                <a class="nav-link active" aria-current="page" href="{{route('user.account')}}">Dashboard</a>
                             </li>
                             {{-- <li class="nav-item">
                                 <a class="nav-link" href="#">Features</a>
@@ -46,10 +46,10 @@
 
 
     {{-- hero  --}}
-    <div class="container px-4 py-5">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="container px-4 ">
+        <div class="row flex-lg-row-reverse align-items-center g-5 ">
             <div class="col-10 col-sm-8 col-lg-6">
-                <img src="{{asset('img/photo1.png')}}" class="d-block mx-lg-auto img-fluid" alt="About"
+                <img src="{{asset('img/image1.png')}}" class="d-block mx-lg-auto img-fluid" width="500px" alt="About"
                     width="700" height="500" loading="lazy">
             </div>
             <div class="col-lg-6">
@@ -65,11 +65,11 @@
     </div>
 
     {{-- about us  --}}
-    <section class="py-3 py-md-5">
+    <section>
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                 <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy" src="{{asset('img/photo1.png')}}" alt="About 1">
+                    <img class="img-fluid rounded" loading="lazy" src="{{asset('img/image2.png')}}" alt="About 1">
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">

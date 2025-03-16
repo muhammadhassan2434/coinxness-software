@@ -17,4 +17,4 @@
             </div>
         </nav>
     </div>
-</div><?php /**PATH E:\laravel\tradeSoftware\resources\views/user/layout/header.blade.php ENDPATH**/ ?>
+</div><?php /**PATH E:\laravel\tradeSoftware\resources\views\user\layout\header.blade.php ENDPATH**/ ?>

@@ -1,7 +1,11 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar  ">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
- 
+    <a href="#" class="brand-link">
+        <img src="<?php echo e(asset('img/AdminLTELogo.png')); ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
+        <span class="brand-text font-weight-light">CionXness </span>
+    </a>
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user (optional) -->
@@ -12,7 +16,8 @@
                     with font-awesome or any other icon font library -->
                     <li class="nav-item">
                         <a href="<?php echo e(route('dashboard.index')); ?>" class="nav-link">
-                            <p>User Account</p>
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
                         </a>
                     </li>
 

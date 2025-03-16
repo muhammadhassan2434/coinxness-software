@@ -33,7 +33,7 @@ Route::middleware(AdminAuthMiddleware::class)->group(function () {
     Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     
     // user routes
-    Route::get('user', [UserContoller::class, 'index'])->name('user.index');
+    Route::get('all/users', [UserContoller::class, 'index'])->name('user.index');
     Route::get('create/user', [UserContoller::class, 'create'])->name('user.create');
     Route::post('user/store', [UserContoller::class, 'store'])->name('user.store');
     Route::get('edit/user/{id}', [UserContoller::class, 'edit'])->name('user.edit');
@@ -46,8 +46,9 @@ Route::middleware(AdminAuthMiddleware::class)->group(function () {
 
 Route::middleware(userAuthMiddleware::class)->group(function () {
     // user routes
-    Route::get('user/dashboard', [homeController::class, 'index'])->name('user.dashboard');
+    Route::get('user/account', [homeController::class, 'index'])->name('user.account');
 
     // account 
-    Route::get('user/account', [homeController::class, 'account'])->name('user.account');
+    Route::get('user/withdraw', [homeController::class, 'withdraw'])->name('user.withdraw');
+    Route::post('request/withdraw', [homeController::class, 'requestWithdraw'])->name('request.withdraw');
 });
