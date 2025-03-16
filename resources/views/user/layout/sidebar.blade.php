@@ -25,9 +25,15 @@
             </li>
 
             <li>
-                <a href="{{ route('user.account') }}" class="text-dark" aria-expanded="false">
-                    <i class="la la-exchange-alt"></i>
+                <a href="{{ route('user.transactions') }}" class="text-dark" aria-expanded="false">
+                    <i class="la la-money"></i>
                     <span class="nav-text">User Transactions</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('ledger.history') }}" class="text-dark" aria-expanded="false">
+                    <i class="la la-money"></i>
+                    <span class="nav-text">Report</span>
                 </a>
             </li>
 

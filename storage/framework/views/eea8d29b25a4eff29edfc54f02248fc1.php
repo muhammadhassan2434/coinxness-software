@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Coinxness </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo e(asset('img/logo.png')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('user/assets/vendor/jqvmap/css/jqvmap.min.css')); ?>">
 	<link rel="stylesheet" href="<?php echo e(asset('user/assets/vendor/chartist/css/chartist.min.css')); ?>">
 	<!-- Summernote -->
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="<?php echo e(asset('user/assets/css/skin-3.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/custom.css')); ?>">
 
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
    

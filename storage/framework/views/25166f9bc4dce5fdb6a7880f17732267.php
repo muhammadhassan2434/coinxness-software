@@ -110,4 +110,4 @@ unset($__errorArgs, $__bag); ?>
 		<!-- AdminLTE for demo purposes -->
 		
 	</body>
-</html><?php /**PATH E:\laravel\tradeSoftware\resources\views\admin\auth\login.blade.php ENDPATH**/ ?>
+</html><?php /**PATH E:\laravel\tradeSoftware\resources\views/admin/auth/login.blade.php ENDPATH**/ ?>

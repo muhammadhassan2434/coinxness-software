@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('img/logo.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo e(asset('img/logo.png')); ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -39,26 +39,26 @@
 
 <body>
 
-    {{-- navbar  --}}
+    
     <div class="container ">
         <div class="row">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <!-- Logo with Controlled Size -->
-                    <a class="navbar-brand" href="{{ route('welcome') }}">
-                        <img src="{{ asset('img/image1.png') }}" class="logo-img" width="150px" alt="Logo">
+                    <a class="navbar-brand" href="<?php echo e(route('welcome')); ?>">
+                        <img src="<?php echo e(asset('img/image1.png')); ?>" class="logo-img" width="150px" alt="Logo">
                     </a>
             
                     <!-- Always Show Dashboard Link on Mobile -->
                     <div class="d-lg-none ms-auto">
-                        <a class="nav-link active" aria-current="page" href="{{ route('user.account') }}">Dashboard</a>
+                        <a class="nav-link active" aria-current="page" href="<?php echo e(route('user.account')); ?>">Dashboard</a>
                     </div>
             
                     <!-- Regular Menu (Visible on Larger Screens) -->
                     <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ route('user.account') }}">Dashboard</a>
+                                <a class="nav-link active" aria-current="page" href="<?php echo e(route('user.account')); ?>">Dashboard</a>
                             </li>
                         </ul>
                     </div>
@@ -69,11 +69,11 @@
     </div>
 
 
-    {{-- hero  --}}
+    
     <div class="container px-4 ">
         <div class="row flex-lg-row-reverse align-items-center g-5 ">
             <div class="col-10 col-sm-8 col-lg-6">
-                <img src="{{asset('img/image2.png')}}" class="d-block mx-lg-auto img-fluid" width="" alt="About"
+                <img src="<?php echo e(asset('img/image2.png')); ?>" class="d-block mx-lg-auto img-fluid" width="" alt="About"
                     width="300" height="300" loading="lazy">
             </div>
             <div class="col-lg-6">
@@ -81,19 +81,19 @@
                 <p class="lead ">CoinXness empowers traders with cutting-edge forex solutions. We provide access to global markets through advanced platforms and expert analysis. Our focus is on transparency, reliability, and personalized support, enabling clients to navigate the complexities of forex trading with confidence. We aim to foster a community of informed and successful traders, leveraging technology and expertise for optimal results. We prioritize secure and efficient trading experiences, built on a foundation of integrity and client trust.
                 </p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    {{-- <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button> --}}
-                    {{-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> --}}
+                    
+                    
                 </div>
             </div>
         </div>
     </div>
 
-    {{-- about us  --}}
+    
     <section>
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                 <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy" src="{{asset('img/logo.png')}}" alt="About 1">
+                    <img class="img-fluid rounded" loading="lazy" src="<?php echo e(asset('img/logo.png')); ?>" alt="About 1">
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">
@@ -107,7 +107,7 @@
                 </div>
             </div>
         </div>
-    {{-- </section footer --}}
+    
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
           <div class="col-md-4 d-flex align-items-center">
@@ -130,10 +130,11 @@
     
     
 
-    {{-- js cdn  --}}
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 </body>
 
 </html>
+<?php /**PATH E:\laravel\tradeSoftware\resources\views/welcome.blade.php ENDPATH**/ ?>

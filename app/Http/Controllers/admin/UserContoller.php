@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Ledger;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -96,11 +97,19 @@ class UserContoller extends Controller
         $request->validate([
             'profit' => 'required|numeric',
         ]);
-    
         $user = User::findOrFail($id);
-        $user->profit += $request->profit; // Add profit to existing value
-        $user->balance += $request->profit; // Also update balance accordingly
+    
+        $user->profit += $request->profit; 
+        $user->balance += $request->profit; 
         $user->save();
+
+        
+        Ledger::create([
+            'user_id' => $user->id,
+            'profit' => $request->profit,
+            'balance' => $user->balance,
+            'date' => now()->toDateString(),
+        ]);
     
         return response()->json(['message' => 'Profit added successfully!']);
     }

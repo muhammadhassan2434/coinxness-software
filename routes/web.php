@@ -9,6 +9,7 @@ use App\Http\Controllers\User\homeController;
 use App\Http\Middleware\AdminAuthMiddleware;
 use App\Http\Middleware\userAuthMiddleware;
 use App\Models\User;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,6 +20,8 @@ Route::get('/', function () {
 Route::get('admin/login', [authController::class, 'login'])->name('admin.login');
 Route::post('admin/login', [authController::class, 'auth'])->name('admin.auth');
 Route::get('admin/logout', [authController::class, 'logout'])->name('admin.logout');
+Route::get('admin/forget/password', [authController::class, 'forget'])->name('admin.forget');
+Route::post('forgot-password', [authController::class, 'submitForgotPassword'])->name('admin.forgot_password.submit');
 
 
 // user auth
@@ -60,4 +63,20 @@ Route::middleware(userAuthMiddleware::class)->group(function () {
     // account 
     Route::get('user/withdraw', [homeController::class, 'withdraw'])->name('user.withdraw');
     Route::post('request/withdraw', [homeController::class, 'requestWithdraw'])->name('request.withdraw');
+    
+    // transactions
+    Route::get('user/transactions', [homeController::class, 'transactions'])->name('user.transactions');
+    Route::get('/ledger-history', [homeController::class, 'ledgerHistory'])->name('ledger.history');
+
+});
+
+
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('optimize:clear');
+    Artisan::call('view:clear');
+    return "Cache Cleared!";
 });

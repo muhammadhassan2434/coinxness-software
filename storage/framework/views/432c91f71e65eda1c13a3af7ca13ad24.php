@@ -20,7 +20,7 @@
 					<a href="#" class="h3">Administrative Panel</a>
 			  	</div>
 			  	<div class="card-body">
-					<p class="login-box-msg">Sign in to start your session</p>
+					<p class="login-box-msg">Forget Your password</p>
 					<form action="<?php echo e(route('admin.auth')); ?>" method="post">
                         <?php echo csrf_field(); ?>
 				  		<div class="input-group mb-3">
@@ -77,15 +77,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
 				  		<div class="row">
-							<!-- <div class="col-8">
-					  			<div class="icheck-primary">
-									<input type="checkbox" id="remember">
-									<label for="remember">
-						  				Remember Me
-									</label>
-					  			</div>
-							</div> -->
-							<!-- /.col -->
+							
 							<div class="col-4">
 					  			<button type="submit" class="btn btn-primary btn-block">Login</button>
 							</div>
@@ -93,7 +85,7 @@ unset($__errorArgs, $__bag); ?>
 				  		</div>
 					</form>
 		  			<p class="mb-1 mt-3">
-				  		<a href="<?php echo e(route('admin.forget')); ?>">I forgot my password</a>
+				  		
 					</p>					
 			  	</div>
 			  	<!-- /.card-body -->
@@ -110,4 +102,4 @@ unset($__errorArgs, $__bag); ?>
 		<!-- AdminLTE for demo purposes -->
 		
 	</body>
-</html><?php /**PATH E:\laravel\tradeSoftware\resources\views\admin\auth\login.blade.php ENDPATH**/ ?>
+</html><?php /**PATH E:\laravel\tradeSoftware\resources\views\admin\auth\forgetpassword.blade.php ENDPATH**/ ?>
