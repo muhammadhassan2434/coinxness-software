@@ -24,9 +24,8 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Logout</a>
+                        <a class="nav-link active" aria-current="page" href="<?php echo e(route('user.logout')); ?>">Logout</a>
                     </li>
-                    
                 </ul>
             </div>
         </div>
@@ -36,15 +35,14 @@
         <div class="row">
             <div class="col-xl-3 col-lg-3 data">
                     <div class="card l-bg-blue-dark">
-                        <div class="card-statistic-3 p-4">
-                            <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
+                        <div class="card-statistic-3 p-4 text-white">
                             <div class="mb-4">
                                 <h5 class="card-title mb-0">User Name</h5>
                             </div>
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        <?php echo e(Auth::user()->name); ?>
+                                        <?php echo e(ucwords(Auth::user()->name)); ?>
 
                                     </h2>
                                 </div>
@@ -56,8 +54,7 @@
             </div>
             <div class="col-xl-3 col-lg-3">
                 <div class="card l-bg-green-dark">
-                    <div class="card-statistic-3 p-4">
-                        <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
+                    <div class="card-statistic-3 p-4 text-white">
                         <div class="mb-4">
                             <h5 class="card-title mb-0">Balance</h5>
                         </div>
@@ -76,8 +73,7 @@
             </div>
             <div class="col-xl-3 col-lg-3">
                 <div class="card l-bg-orange-dark">
-                    <div class="card-statistic-3 p-4">
-                        <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="card-statistic-3 p-4 text-white">
                         <div class="mb-4">
                             <h5 class="card-title mb-0">Invested</h5>
                         </div>
@@ -95,15 +91,14 @@
             </div>
             <div class="col-xl-3 col-lg-3">
                 <div class="card l-bg-cherry">
-                    <div class="card-statistic-3 p-4">
-                        <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="card-statistic-3 p-4 text-white">
                         <div class="mb-4">
                             <h5 class="card-title mb-0">Withdraw</h5>
                         </div>
                         <div class="row align-items-center mb-2 d-flex">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    3,243
+                                    None
                                 </h2>
                             </div>
                             
@@ -114,6 +109,8 @@
         </div>
     </div>
 
+    
+
 
 
     
@@ -123,4 +120,5 @@
 </body>
 
 </html>
-<?php /**PATH E:\laravel\tradeSoftware\resources\views\user\home.blade.php ENDPATH**/ ?>
+
+<?php echo $__env->make('user.layout.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH E:\laravel\tradeSoftware\resources\views\user\home.blade.php ENDPATH**/ ?>

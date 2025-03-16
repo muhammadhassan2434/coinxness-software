@@ -30,7 +30,7 @@ Route::get('user/logout', [AuthticateController::class, 'logout'])->name('user.l
 Route::middleware(AdminAuthMiddleware::class)->group(function () {
     
     // dashboard routes
-    Route::get('dashboard', [DashboardController::class, 'index'])->prefix('admin')->name('dashboard.index');
+    Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     
     // user routes
     Route::get('user', [UserContoller::class, 'index'])->name('user.index');
@@ -47,4 +47,7 @@ Route::middleware(AdminAuthMiddleware::class)->group(function () {
 Route::middleware(userAuthMiddleware::class)->group(function () {
     // user routes
     Route::get('user/dashboard', [homeController::class, 'index'])->name('user.dashboard');
+
+    // account 
+    Route::get('user/account', [homeController::class, 'account'])->name('user.account');
 });
