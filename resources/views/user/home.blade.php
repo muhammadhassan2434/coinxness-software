@@ -34,7 +34,7 @@
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        {{ Auth::user()->balance }}
+                                       ${{ Auth::user()->balance }}
                                     </h2>
                                 </div>
 
@@ -52,7 +52,7 @@
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        {{ Auth::user()->capital }}
+                                        ${{ Auth::user()->capital }}
                                     </h2>
                                 </div>
 
@@ -69,7 +69,7 @@
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        {{$withdrawl}}
+                                        ${{$withdrawl}}
                                     </h2>
                                 </div>
 
@@ -96,11 +96,11 @@
                                 </li>
                                 <li class="list-group-item px-0 d-flex ">
                                     <span class="mb-0">Account Balance :</span><strong
-                                        class="mx-3">{{ $user->balance }}</strong>
+                                        class="mx-3">${{ $user->balance }}</strong>
                                 </li>
                                 <li class="list-group-item px-0 d-flex ">
                                     <span class="mb-0">Total Earned :</span><strong
-                                        class="mx-3">{{ $earned }}</strong>
+                                        class="mx-3">${{ $earned }}</strong>
                                 </li>
 
                             </ul>

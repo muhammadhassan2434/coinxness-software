@@ -36,7 +36,7 @@
                                     <tr>
                                         <td><strong><?php echo e($i); ?></strong></td>
                                         <td><?php echo e($transaction->user->name); ?></td>
-                                        <td><?php echo e($transaction->amount); ?></td>
+                                        <td>$<?php echo e($transaction->amount); ?></td>
                                         <td><?php echo e($transaction->updated_at); ?></td>
                                         
                                     </tr>

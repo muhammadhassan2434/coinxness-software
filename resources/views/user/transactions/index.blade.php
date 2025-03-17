@@ -36,7 +36,7 @@
                                     <tr>
                                         <td><strong>{{ $i }}</strong></td>
                                         <td>{{ $transaction->user->name }}</td>
-                                        <td>{{ $transaction->amount }}</td>
+                                        <td>${{ $transaction->amount }}</td>
                                         <td>{{ $transaction->updated_at }}</td>
                                         
                                     </tr>

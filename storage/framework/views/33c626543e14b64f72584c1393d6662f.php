@@ -39,7 +39,7 @@
                                 <tr>
                                     <td><?php echo e($item->id); ?></td>
                                     <td><?php echo e($item->user->name ?? 'N/A'); ?></td>
-                                    <td><?php echo e($item->amount ?? 'N/A'); ?></td>
+                                    <td>$<?php echo e($item->amount ?? 'N/A'); ?></td>
                                     <td><?php echo e($item->created_at ?? 'N/A'); ?></td>
                                     <td>
                                         <a href="<?php echo e(route('withdraw.approve', $item->id)); ?>"

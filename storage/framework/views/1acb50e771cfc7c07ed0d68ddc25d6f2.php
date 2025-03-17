@@ -52,10 +52,10 @@
                                         <td><?php echo e($item->id); ?></td>
                                         <td><?php echo e($item->name ?? 'N/A'); ?></td>
                                         <td><?php echo e($item->email ?? 'N/A'); ?></td>
-                                        <td><?php echo e($item->capital ?? 'N/A'); ?></td>
-                                        <td><?php echo e($item->balance ?? 'N/A'); ?></td>
-                                        <td><?php echo e($item->profit ?? 'N/A'); ?></td>
-                                        <td><?php echo e($item->loss ?? 'N/A'); ?></td>
+                                        <td>$<?php echo e($item->capital ?? 'N/A'); ?></td>
+                                        <td>$<?php echo e($item->balance ?? 'N/A'); ?></td>
+                                        <td>$<?php echo e($item->profit ?? 'N/A'); ?></td>
+                                        <td>$<?php echo e($item->loss ?? 'N/A'); ?></td>
                                         <td>
                                             <button class="btn btn-primary add-profit-btn" data-id="<?php echo e($item->id); ?>"
                                                 data-toggle="modal" data-target="#profitModal">

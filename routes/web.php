@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\UserContoller;
 use App\Http\Controllers\admin\withdrawController;
 use App\Http\Controllers\user\AuthticateController;
+use App\Http\Controllers\User\depositController;
 use App\Http\Controllers\User\homeController;
 use App\Http\Middleware\AdminAuthMiddleware;
 use App\Http\Middleware\userAuthMiddleware;
@@ -67,6 +68,12 @@ Route::middleware(userAuthMiddleware::class)->group(function () {
     // transactions
     Route::get('user/transactions', [homeController::class, 'transactions'])->name('user.transactions');
     Route::get('/ledger-history', [homeController::class, 'ledgerHistory'])->name('ledger.history');
+
+    // deposit routes
+    Route::get('user/deposit', [depositController::class, 'index'])->name('user.deposit');
+    Route::post('user/deposit', [depositController::class, 'deposit'])->name('user.deposit.store');
+    Route::get('admin/info', [depositController::class, 'admininfo'])->name('deposit.admininfo');
+    Route::post('uploadscreenshoot', [depositController::class, 'uploadscreenshoot'])->name('deposit.uploadscreenshoot');
 
 });
 

@@ -42,24 +42,29 @@
     
     <div class="container ">
         <div class="row">
-            <nav class="navbar navbar-expand-lg ">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="<?php echo e(route('welcome')); ?>"><img src="<?php echo e(asset('img/logo.png')); ?>" width="150px" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- Logo with Controlled Size -->
+                    <a class="navbar-brand" href="<?php echo e(route('welcome')); ?>">
+                        <img src="<?php echo e(asset('img/image1.png')); ?>" class="logo-img" width="150px" alt="Logo">
+                    </a>
+            
+                    <!-- Always Show Dashboard Link on Mobile -->
+                    <div class="d-lg-none ms-auto">
+                        <a class="nav-link active" aria-current="page" href="<?php echo e(route('user.account')); ?>">Dashboard</a>
+                    </div>
+            
+                    <!-- Regular Menu (Visible on Larger Screens) -->
+                    <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="<?php echo e(route('user.account')); ?>">Dashboard</a>
-                            </li>
-                            
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
+            
         </div>
     </div>
 
@@ -68,8 +73,8 @@
     <div class="container px-4 ">
         <div class="row flex-lg-row-reverse align-items-center g-5 ">
             <div class="col-10 col-sm-8 col-lg-6">
-                <img src="<?php echo e(asset('img/image1.png')); ?>" class="d-block mx-lg-auto img-fluid" width="500px" alt="About"
-                    width="700" height="500" loading="lazy">
+                <img src="<?php echo e(asset('img/banner.png')); ?>" class="d-block mx-lg-auto img-fluid" width="" alt="About"
+                     loading="lazy" style="width: 350px">
             </div>
             <div class="col-lg-6">
                 <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About CoinXness</h1>
@@ -88,7 +93,7 @@
         <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                 <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy" src="<?php echo e(asset('img/image2.png')); ?>" alt="About 1">
+                    <img class="img-fluid rounded" loading="lazy" src="<?php echo e(asset('img/logo.png')); ?>" alt="About 1">
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">

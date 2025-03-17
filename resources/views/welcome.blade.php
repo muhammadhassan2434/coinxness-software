@@ -73,8 +73,8 @@
     <div class="container px-4 ">
         <div class="row flex-lg-row-reverse align-items-center g-5 ">
             <div class="col-10 col-sm-8 col-lg-6">
-                <img src="{{asset('img/image2.png')}}" class="d-block mx-lg-auto img-fluid" width="" alt="About"
-                    width="300" height="300" loading="lazy">
+                <img src="{{asset('img/banner.png')}}" class="d-block mx-lg-auto img-fluid" width="" alt="About"
+                     loading="lazy" style="width: 350px">
             </div>
             <div class="col-lg-6">
                 <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About CoinXness</h1>

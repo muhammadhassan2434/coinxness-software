@@ -39,7 +39,7 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->user->name ?? 'N/A' }}</td>
-                                    <td>{{ $item->amount ?? 'N/A' }}</td>
+                                    <td>${{ $item->amount ?? 'N/A' }}</td>
                                     <td>{{ $item->created_at ?? 'N/A' }}</td>
                                     <td>
                                         <a href="{{ route('withdraw.approve', $item->id) }}"

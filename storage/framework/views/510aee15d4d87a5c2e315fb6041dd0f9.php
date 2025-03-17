@@ -35,7 +35,7 @@
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        <?php echo e(Auth::user()->balance); ?>
+                                       $<?php echo e(Auth::user()->balance); ?>
 
                                     </h2>
                                 </div>
@@ -54,7 +54,7 @@
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        <?php echo e(Auth::user()->capital); ?>
+                                        $<?php echo e(Auth::user()->capital); ?>
 
                                     </h2>
                                 </div>
@@ -72,7 +72,7 @@
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        <?php echo e($withdrawl); ?>
+                                        $<?php echo e($withdrawl); ?>
 
                                     </h2>
                                 </div>
@@ -100,11 +100,11 @@
                                 </li>
                                 <li class="list-group-item px-0 d-flex ">
                                     <span class="mb-0">Account Balance :</span><strong
-                                        class="mx-3"><?php echo e($user->balance); ?></strong>
+                                        class="mx-3">$<?php echo e($user->balance); ?></strong>
                                 </li>
                                 <li class="list-group-item px-0 d-flex ">
                                     <span class="mb-0">Total Earned :</span><strong
-                                        class="mx-3"><?php echo e($earned); ?></strong>
+                                        class="mx-3">$<?php echo e($earned); ?></strong>
                                 </li>
 
                             </ul>

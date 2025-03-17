@@ -60,8 +60,8 @@
                                     <tr>
                                         <td>{{ $i }}</td>
                                         <td>{{ $entry->date }}</td>
-                                        <td>{{ number_format($entry->profit, 2) }}</td>
-                                        <td>{{ number_format($entry->balance, 2) }}</td>
+                                        <td>${{ number_format($entry->profit, 2) }}</td>
+                                        <td>${{ number_format($entry->balance, 2) }}</td>
                                     </tr>
                                     @php $i++; @endphp
                                 @endforeach

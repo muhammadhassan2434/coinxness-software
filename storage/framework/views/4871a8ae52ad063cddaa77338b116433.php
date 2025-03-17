@@ -35,7 +35,7 @@
                                     <tr>
                                         <td><?php echo e($item->id); ?></td>
                                         <td><?php echo e($item->user->name ?? 'N/A'); ?></td>
-                                        <td><?php echo e($item->amount ?? 'N/A'); ?></td>
+                                        <td>$<?php echo e($item->amount ?? 'N/A'); ?></td>
                                         <td><?php echo e($item->updated_at ?? 'N/A'); ?></td>
 
                                     </tr>

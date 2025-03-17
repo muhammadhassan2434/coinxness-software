@@ -11,7 +11,7 @@
             </li>
 
             <li>
-                <a href="{{ route('user.account') }}" class="text-dark" aria-expanded="false">
+                <a href="{{ route('user.deposit') }}" class="text-dark" aria-expanded="false">
                     <i class="la la-money"></i>
                     <span class="nav-text">Make a Deposit</span>
                 </a>

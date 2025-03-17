@@ -44,7 +44,7 @@
                                             <div class="row align-items-center mb-2 d-flex">
                                                 <div class="col-8">
                                                     <h2 class="d-flex align-items-center mb-0">
-                                                        {{ Auth::user()->balance }}
+                                                        ${{ Auth::user()->balance }}
                                                     </h2>
                                                 </div>
 
@@ -62,7 +62,7 @@
                                             <div class="row align-items-center mb-2 d-flex">
                                                 <div class="col-8">
                                                     <h2 class="d-flex align-items-center mb-0">
-                                                        {{ $withdrawls }}
+                                                        ${{ $withdrawls }}
                                                     </h2>
                                                 </div>
 

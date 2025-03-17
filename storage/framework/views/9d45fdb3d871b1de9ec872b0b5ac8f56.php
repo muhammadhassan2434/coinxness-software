@@ -60,8 +60,8 @@
                                     <tr>
                                         <td><?php echo e($i); ?></td>
                                         <td><?php echo e($entry->date); ?></td>
-                                        <td><?php echo e(number_format($entry->profit, 2)); ?></td>
-                                        <td><?php echo e(number_format($entry->balance, 2)); ?></td>
+                                        <td>$<?php echo e(number_format($entry->profit, 2)); ?></td>
+                                        <td>$<?php echo e(number_format($entry->balance, 2)); ?></td>
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

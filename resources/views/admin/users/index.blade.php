@@ -52,10 +52,10 @@
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->name ?? 'N/A' }}</td>
                                         <td>{{ $item->email ?? 'N/A' }}</td>
-                                        <td>{{ $item->capital ?? 'N/A' }}</td>
-                                        <td>{{ $item->balance ?? 'N/A' }}</td>
-                                        <td>{{ $item->profit ?? 'N/A' }}</td>
-                                        <td>{{ $item->loss ?? 'N/A' }}</td>
+                                        <td>${{ $item->capital ?? 'N/A' }}</td>
+                                        <td>${{ $item->balance ?? 'N/A' }}</td>
+                                        <td>${{ $item->profit ?? 'N/A' }}</td>
+                                        <td>${{ $item->loss ?? 'N/A' }}</td>
                                         <td>
                                             <button class="btn btn-primary add-profit-btn" data-id="{{ $item->id }}"
                                                 data-toggle="modal" data-target="#profitModal">

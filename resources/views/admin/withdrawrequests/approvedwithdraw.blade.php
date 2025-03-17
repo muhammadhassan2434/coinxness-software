@@ -35,7 +35,7 @@
                                     <tr>
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->user->name ?? 'N/A' }}</td>
-                                        <td>{{ $item->amount ?? 'N/A' }}</td>
+                                        <td>${{ $item->amount ?? 'N/A' }}</td>
                                         <td>{{ $item->updated_at ?? 'N/A' }}</td>
 
                                     </tr>
