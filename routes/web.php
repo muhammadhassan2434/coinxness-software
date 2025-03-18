@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\authController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\depositRequestController;
 use App\Http\Controllers\admin\UserContoller;
 use App\Http\Controllers\admin\withdrawController;
 use App\Http\Controllers\user\AuthticateController;
@@ -9,7 +10,6 @@ use App\Http\Controllers\User\depositController;
 use App\Http\Controllers\User\homeController;
 use App\Http\Middleware\AdminAuthMiddleware;
 use App\Http\Middleware\userAuthMiddleware;
-use App\Models\User;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -52,7 +52,13 @@ Route::middleware(AdminAuthMiddleware::class)->group(function () {
     Route::get('withdraw/requests', [withdrawController::class, 'index'])->name('all.withdraw.requests');
     Route::get('withdraw/approve/{id}', [withdrawController::class, 'approve'])->name('withdraw.approve');
     Route::get('withdraw/approved', [withdrawController::class, 'approved'])->name('withdraw.approved');
-
+    
+    
+    // deposit requests routes
+    Route::get('deposit/requests', [depositRequestController::class, 'index'])->name('all.deposit.requests');
+    Route::get('deposit/approve/{id}', [depositRequestController::class, 'approve'])->name('deposit.approve');
+    Route::get('deposit/approved', [depositRequestController::class, 'approved'])->name('deposit.approved');
+    
 
 });
 
@@ -72,7 +78,7 @@ Route::middleware(userAuthMiddleware::class)->group(function () {
     // deposit routes
     Route::get('user/deposit', [depositController::class, 'index'])->name('user.deposit');
     Route::post('user/deposit', [depositController::class, 'deposit'])->name('user.deposit.store');
-    Route::get('admin/info', [depositController::class, 'admininfo'])->name('deposit.admininfo');
+    Route::get('admin/info/{deposit_id}', [depositController::class, 'admininfo'])->name('deposit.admininfo');
     Route::post('uploadscreenshoot', [depositController::class, 'uploadscreenshoot'])->name('deposit.uploadscreenshoot');
 
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Ledger;
 use App\Models\Withdrawl;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -22,10 +23,13 @@ class homeController extends Controller
 
 
         $withdrawls = Withdrawl::where('user_id', $user->id)->where('status', 'approved')->get();
-
         $withdrawl = $withdrawls->sum('amount');
 
-        return view('user.home', compact('user', 'earned', 'withdrawl'));
+        $todayProfit = Ledger::where('user_id', $user->id)
+        ->whereDate('created_at', Carbon::today())
+        ->sum('profit');
+
+        return view('user.home', compact('user', 'earned', 'withdrawl','todayProfit'));
     }
 
 

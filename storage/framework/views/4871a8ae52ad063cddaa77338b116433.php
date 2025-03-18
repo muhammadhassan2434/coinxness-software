@@ -34,7 +34,7 @@
                                 <?php $__currentLoopData = $withdraws; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
                                         <td><?php echo e($item->id); ?></td>
-                                        <td><?php echo e($item->user->name ?? 'N/A'); ?></td>
+                                        <td><?php echo e($item->name ?? 'N/A'); ?></td>
                                         <td>$<?php echo e($item->amount ?? 'N/A'); ?></td>
                                         <td><?php echo e($item->updated_at ?? 'N/A'); ?></td>
 

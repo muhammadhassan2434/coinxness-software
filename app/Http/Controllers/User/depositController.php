@@ -37,14 +37,17 @@ class depositController extends Controller
         $deposit->status = 'pending';
         $deposit->save();
 
-        return redirect()->route('deposit.admininfo');
+        $deposit_id = $deposit->id;
+
+        return redirect()->route('deposit.admininfo',['deposit_id' => $deposit_id]);
     }
 
 
-    public function admininfo()
+    public function admininfo($deposit_id)
     {
-        return view('user.deposit.admininfo');
+        return view('user.deposit.admininfo', compact('deposit_id'));
     }
+    
 
     public function uploadscreenshoot(Request $request)
     {
@@ -56,7 +59,7 @@ class depositController extends Controller
         }
 
 
-        $deposit = Deposit::where('user_id', $request->user_id)->first();
+        $deposit = Deposit::find($request->deposit_id);
         if (!$deposit) {
             return redirect()->back()->with('error', 'Deposit record not found.');
         }
@@ -74,4 +77,7 @@ class depositController extends Controller
 
         return redirect()->route('user.deposit');
     }
+
+   
+
 }

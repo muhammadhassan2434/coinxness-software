@@ -57,10 +57,10 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="mb-3 text-center">Upload payment screenshoot</h4>
-                                <form action="<?php echo e(route('request.withdraw')); ?>" method="POST" enctype="multipart/form-data">
+                                <form action="<?php echo e(route('deposit.uploadscreenshoot')); ?>" method="POST" enctype="multipart/form-data">
                                     <?php echo csrf_field(); ?>
                                     <div class="form-group mt-3">
-                                        <input type="hidden" name="user_id" value="<?php echo e(Auth::user()->id); ?>" id="">
+                                        <input type="hidden" name="deposit_id" value="<?php echo e($deposit_id); ?>" id="">
                                         <label for="payment_screenshot">Upload Payment Screenshot</label>
                                         <input type="file" id="payment_screenshot" name="payment_screenshot" class="form-control" required>
                                         <?php $__errorArgs = ['payment_screenshot'];

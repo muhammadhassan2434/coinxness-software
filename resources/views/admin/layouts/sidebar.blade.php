@@ -41,7 +41,18 @@
                             <p>Withdraws Approved</p>
                         </a>
                     </li>
-
+                    <li class="nav-item">
+                        <a href="{{ route('all.deposit.requests') }}" class="nav-link">
+                            <i class="nav-icon fas fa-file-alt"></i>
+                            <p>Deposit Requests</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('deposit.approved') }}" class="nav-link">
+                            <i class="nav-icon fas fa-file-alt"></i>
+                            <p>Deposit Approved</p>
+                        </a>
+                    </li>
 
             </ul>
         </nav>

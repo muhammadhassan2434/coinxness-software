@@ -77,6 +77,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-3 col-lg-3">
+                    <div class="card l-bg-cherry">
+                        <div class="card-statistic-3 p-4 text-white">
+                            <div class="mb-4">
+                                <h5 class="card-title mb-0">Today Profit</h5>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h2 class="d-flex align-items-center mb-0">
+                                        ${{$todayProfit}}
+                                    </h2>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
