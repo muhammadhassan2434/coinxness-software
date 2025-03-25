@@ -22,8 +22,8 @@
             <div class="col-lg-4 col-6">							
                 <div class="small-box card">
                     <div class="inner">
-                        <h3>20</h3>
-                        <p>Total Income</p>
+                        <h3><?php echo e($users); ?></h3>
+                        <p>Total Users</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
@@ -35,8 +35,32 @@
             <div class="col-lg-4 col-6">							
                 <div class="small-box card">
                     <div class="inner">
-                        <h3>10</h3>
-                        <p>Total Products</p>
+                        <h3><?php echo e($totalCapital); ?></h3>
+                        <p>Total Capital</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="#" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-6">							
+                <div class="small-box card">
+                    <div class="inner">
+                        <h3><?php echo e($totalProfit); ?></h3>
+                        <p>Total Profit</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="#" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-6">							
+                <div class="small-box card">
+                    <div class="inner">
+                        <h3><?php echo e($totalBalance); ?></h3>
+                        <p>Total Balance</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>

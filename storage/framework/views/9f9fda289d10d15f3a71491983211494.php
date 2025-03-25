@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="card-body pt-2">
                         <div class="text-center">
-                            <h3 class="mt-4 mb-1 text-center">Account Info</h3>
+                            <h3 class="mt-4 mb-1 text-center">Admin Account Info</h3>
 
                             <?php if(session('success')): ?>
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -39,9 +39,11 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-6">
                                     <div class="card bg-light p-3">
-                                        <p><strong>Name:</strong> hassan</p>
-                                        <p><strong>Account Number:</strong> 347626427647</p>
-                                        <p><strong>Payment Method:</strong> 347626427647</p>
+                                        <p><strong>Account Title :</strong> MUHAMMAD YASIR ABBAS</p>
+                                        <p><strong>Bank Name :</strong> Meezan Bank</p>
+                                        <p><strong>Bank detail :</strong> Meezan Bank-Civil Lines Branch, Faisalabad</p>
+                                        <p><strong>Account Number:</strong>04140109665273</p>
+                                        <p><strong>IBAN:</strong>PK61MEZN0004140109665273</p>
                                     </div>
                                 </div>
                             </div>

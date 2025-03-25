@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="card-body pt-2">
                         <div class="text-center">
-                            <h3 class="mt-4 mb-1 text-center">Admin Account Info</h3>
+                            <h3 class="mt-4 mb-1 text-center">Send Payment Here!</h3>
 
                             @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">

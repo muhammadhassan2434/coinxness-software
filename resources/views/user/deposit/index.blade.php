@@ -20,6 +20,7 @@
                                 <form method="POST" action="{{ route('user.deposit.store') }}">
                                     @csrf
                                     <div class="row">
+                                        <h3 class="text-center">Sender Account Info</h3>
                                         <!-- Select Payment Method -->
                                         <div class="col-md-6 mb-3">
                                             <label for="payment_method">Select Payment Method</label>

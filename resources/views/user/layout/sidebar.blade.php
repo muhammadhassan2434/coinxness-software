@@ -38,7 +38,7 @@
             </li>
 
             <li>
-                <a href="{{ route('user.account') }}" class="text-dark" aria-expanded="false">
+                <a href="{{ route('support.index') }}" class="text-dark" aria-expanded="false">
                     <i class="la la-life-ring"></i>
                     <span class="nav-text">Support</span>
                 </a>

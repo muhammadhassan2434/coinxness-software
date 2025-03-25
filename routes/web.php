@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\withdrawController;
 use App\Http\Controllers\user\AuthticateController;
 use App\Http\Controllers\User\depositController;
 use App\Http\Controllers\User\homeController;
+use App\Http\Controllers\User\SupportController;
 use App\Http\Middleware\AdminAuthMiddleware;
 use App\Http\Middleware\userAuthMiddleware;
 use Illuminate\Support\Facades\Artisan;
@@ -58,6 +59,11 @@ Route::middleware(AdminAuthMiddleware::class)->group(function () {
     Route::get('deposit/requests', [depositRequestController::class, 'index'])->name('all.deposit.requests');
     Route::get('deposit/approve/{id}', [depositRequestController::class, 'approve'])->name('deposit.approve');
     Route::get('deposit/approved', [depositRequestController::class, 'approved'])->name('deposit.approved');
+
+
+    // support page
+    Route::get('support/users', [SupportController::class, 'adminPage'])->name('admin.support');
+    Route::get('support/user/{id}', [SupportController::class, 'show'])->name('admin.support.show');
     
 
 });
@@ -81,8 +87,12 @@ Route::middleware(userAuthMiddleware::class)->group(function () {
     Route::get('admin/info/{deposit_id}', [depositController::class, 'admininfo'])->name('deposit.admininfo');
     Route::post('uploadscreenshoot', [depositController::class, 'uploadscreenshoot'])->name('deposit.uploadscreenshoot');
 
+    
 });
 
+// support routes
+Route::get('support', [SupportController::class, 'index'])->name('support.index');
+Route::post('support/store', [SupportController::class, 'store'])->name('support.store');
 
 
 Route::get('/clear-cache', function() {

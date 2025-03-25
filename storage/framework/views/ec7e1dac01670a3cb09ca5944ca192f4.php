@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
     <title>Coinxness</title>
     <style>
         #whatsapp-button {
@@ -72,42 +70,72 @@
     </div>
 
 
-    
-    <div class="container px-4 ">
-        <div class="row flex-lg-row-reverse align-items-center g-5 ">
-            <div class="col-10 col-sm-8 col-lg-6">
-                <img src="<?php echo e(asset('img/banner.png')); ?>" class="d-block mx-lg-auto img-fluid" width="" alt="About"
-                     loading="lazy" style="width: 350px">
-            </div>
-            <div class="col-lg-6">
-                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About CoinXness</h1>
-                <p class="lead ">CoinXness empowers traders with cutting-edge forex solutions. We provide access to global markets through advanced platforms and expert analysis. Our focus is on transparency, reliability, and personalized support, enabling clients to navigate the complexities of forex trading with confidence. We aim to foster a community of informed and successful traders, leveraging technology and expertise for optimal results. We prioritize secure and efficient trading experiences, built on a foundation of integrity and client trust.
-                </p>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg p-4">
+                    <h2 class="text-center mb-4">Support Form</h2>
+                    <form action="<?php echo e(route('support.store')); ?>" method="POST">
+                        <?php echo csrf_field(); ?> 
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+                            <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <span class="text-danger">
+                                    <?php echo e($message); ?>
+
+                                </span>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email">
+                            <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <span class="text-danger">
+                                <?php echo e($message); ?>
+
+                            </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" name="message" id="message" rows="4" placeholder="Enter your message"></textarea>
+                            <?php $__errorArgs = ['message'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <span class="text-danger">
+                                <?php echo e($message); ?>
+
+                            </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
-    
-    <section>
-        <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-                <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy" src="<?php echo e(asset('img/logo.png')); ?>" alt="About 1">
-                </div>
-                <div class="col-12 col-lg-6 col-xl-7">
-                    <div class="row justify-content-xl-center">
-                        <div class="col-12 col-xl-11">
-                            <h2 class="mb-3">Vision</h2>
-                            <p class="lead fs-4 text-secondary mb-3">CoinXness envisions becoming a leading global forex trading platform, recognized for its innovative technology and exceptional client service. We aim to democratize access to forex markets, empowering individuals to achieve financial independence. </p>
-                            <p class="mb-5">We strive to be the preferred partner for traders worldwide, fostering a culture of continuous learning and growth. We will lead the industry in ethical practices, transparency, and technological advancement, setting new standards for excellence.</p>
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    <div class="container">
+     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
           <div class="col-md-4 d-flex align-items-center">
             <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
@@ -123,9 +151,6 @@
           </ul>
         </footer>
       </div>
-      <a href=<?php echo e(route('support.index')); ?>  id="whatsapp-button" class="d-flex align-items-center justify-content-center">
-        <i class="fas fa-headset text-white" style="font-size: 30px;"></i>
-    </a>
     
     
 
@@ -136,4 +161,4 @@
 </body>
 
 </html>
-<?php /**PATH E:\laravel\tradeSoftware\resources\views\welcome.blade.php ENDPATH**/ ?>
+<?php /**PATH E:\laravel\tradeSoftware\resources\views/user/support/index.blade.php ENDPATH**/ ?>
