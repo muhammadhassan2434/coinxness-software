@@ -28,7 +28,8 @@ class UserContoller extends Controller
             'email' => 'required',
             'password' => 'required',
             'balance' => 'required',
-            'capital' => 'required'
+            'capital' => 'required',
+            'reg_date' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -41,7 +42,7 @@ class UserContoller extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->capital = $request->capital;
-        // $user->role = $request->role;
+        $user->reg_date = $request->reg_date;
         $user->balance = $request->balance;
         $user->save();
 
@@ -60,7 +61,8 @@ class UserContoller extends Controller
         'name' => 'required',
         'email' => 'required',
         'balance' => 'required',
-        'capital' => 'required'
+        'capital' => 'required',
+        'reg_date' => 'required'
     ]);
 
     if ($validator->fails()) {
@@ -76,6 +78,7 @@ class UserContoller extends Controller
     }
     
     $user->capital = $request->capital;
+    $user->reg_date = $request->reg_date;
     $user->balance = $request->balance;
     $user->save();
 

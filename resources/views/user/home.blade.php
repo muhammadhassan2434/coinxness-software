@@ -109,7 +109,7 @@
                                 </li>
                                 <li class="list-group-item px-0 d-flex ">
                                     <span class="mb-0">Registration Date :</span><strong
-                                        class="mx-3">{{ $user->created_at->format('Y-m-d') }}</strong>
+                                        class="mx-3">{{ $user->reg_date ?? '' }}</strong>
                                 </li>
                                 <li class="list-group-item px-0 d-flex ">
                                     <span class="mb-0">Account Balance :</span><strong

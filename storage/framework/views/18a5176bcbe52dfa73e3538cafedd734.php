@@ -51,10 +51,8 @@
         ***********************************-->
         <div class="nav-header">
             <a href="<?php echo e(route('user.account')); ?>" class="brand-logo">
-                <h1>Coinxness</h1>
-                
-                
-                
+                <img class="logo-compact" src="<?php echo e(asset('img/logo2.png')); ?>" alt="">
+                <img class="brand-title" src="<?php echo e(asset('img/logo2.png')); ?>" alt="">
             </a>
 
             <div class="nav-control">

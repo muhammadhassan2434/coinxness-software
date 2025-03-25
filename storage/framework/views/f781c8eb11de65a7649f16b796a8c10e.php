@@ -1,5 +1,5 @@
-@extends('admin.layouts.app')
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid my-2">
@@ -8,7 +8,7 @@
                     <h1>Users</h1>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <a href="{{ route('user.create') }}" class="btn btn-primary">Add User</a>
+                    <a href="<?php echo e(route('user.create')); ?>" class="btn btn-primary">Add User</a>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
 
 
             <div class="card">
-                <form action="{{ route('user.index') }}" method="GET">
+                <form action="<?php echo e(route('user.index')); ?>" method="GET">
                     <div class="card-header">
                     </div>
                 </form>
@@ -46,27 +46,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @php
+                            <?php
                                 $i = 1;
-                            @endphp
-                            @if ($users->isNotEmpty())
-                                @foreach ($users as $item)
+                            ?>
+                            <?php if($users->isNotEmpty()): ?>
+                                <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td>{{ $i }}</td>
-                                        <td>{{ $item->name ?? 'N/A' }}</td>
-                                        <td>{{ $item->email ?? 'N/A' }}</td>
-                                        <td>${{ $item->capital ?? 'N/A' }}</td>
-                                        <td>${{ $item->balance ?? 'N/A' }}</td>
-                                        <td>${{ $item->profit ?? 'N/A' }}</td>
-                                        <td>${{ $item->loss ?? 'N/A' }}</td>
+                                        <td><?php echo e($i); ?></td>
+                                        <td><?php echo e($item->name ?? 'N/A'); ?></td>
+                                        <td><?php echo e($item->email ?? 'N/A'); ?></td>
+                                        <td>$<?php echo e($item->capital ?? 'N/A'); ?></td>
+                                        <td>$<?php echo e($item->balance ?? 'N/A'); ?></td>
+                                        <td>$<?php echo e($item->profit ?? 'N/A'); ?></td>
+                                        <td>$<?php echo e($item->loss ?? 'N/A'); ?></td>
                                         <td>
-                                            <button class="btn btn-primary add-profit-btn" data-id="{{ $item->id }}"
+                                            <button class="btn btn-primary add-profit-btn" data-id="<?php echo e($item->id); ?>"
                                                 data-toggle="modal" data-target="#profitModal">
                                                 Add Profit
                                             </button>
                                         </td>
                                         <td>
-                                            <button class="btn btn-danger add-loss-btn" data-id="{{ $item->id }}"
+                                            <button class="btn btn-danger add-loss-btn" data-id="<?php echo e($item->id); ?>"
                                                 data-toggle="modal" data-target="#lossModal">
                                                 Add Loss
                                             </button>
@@ -75,7 +75,7 @@
 
                                         <td class="d-flex">
                                             <!-- Edit Button -->
-                                            <a href="{{ route('user.edit', $item->id) }}" class="mr-2">
+                                            <a href="<?php echo e(route('user.edit', $item->id)); ?>" class="mr-2">
                                                 <svg class="filament-link-icon w-4 h-4" xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path
@@ -85,10 +85,10 @@
                                             </a>
 
                                             <!-- Delete Button -->
-                                            <form action="{{ route('user.destroy', $item->id) }}" method="POST"
+                                            <form action="<?php echo e(route('user.destroy', $item->id)); ?>" method="POST"
                                                 onsubmit="return confirm('Are you sure you want to delete this item?');">
-                                                @csrf
-                                                @method('DELETE')
+                                                <?php echo csrf_field(); ?>
+                                                <?php echo method_field('DELETE'); ?>
                                                 <button type="submit" class="text-danger border-0 bg-transparent p-0">
                                                     <svg class="filament-link-icon w-4 h-4"
                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -101,22 +101,23 @@
                                             </form>
                                         </td>
                                     </tr>
-                                    @php
+                                    <?php
                                         $i++;
-                                    @endphp
-                                @endforeach
-                            @else
+                                    ?>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php else: ?>
                                 <tr>
                                     <td colspan="5" class="text-danger text-center">
                                         <h1>Rcords not found</h1>
                                     </td>
                                 </tr>
-                            @endif
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
                 <div class="card-footer clearfix">
-                    {{ $users->links('pagination::bootstrap-5') }}
+                    <?php echo e($users->links('pagination::bootstrap-5')); ?>
+
 
                 </div>
 
@@ -133,8 +134,8 @@
                                 </button>
                             </div>
                             <form id="profitForm" method="POST">
-                                @csrf
-                                @method('PUT')
+                                <?php echo csrf_field(); ?>
+                                <?php echo method_field('PUT'); ?>
                                 <div class="modal-body">
                                     <input type="hidden" id="user_id" name="user_id">
                                     <div class="form-group">
@@ -152,7 +153,7 @@
                 </div>
 
 
-                {{-- loss model  --}}
+                
                 <!-- Loss Modal -->
                 <div class="modal fade" id="lossModal" tabindex="-1" aria-labelledby="lossModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -164,8 +165,8 @@
                                 </button>
                             </div>
                             <form id="lossForm" method="POST">
-                                @csrf
-                                @method('PUT')
+                                <?php echo csrf_field(); ?>
+                                <?php echo method_field('PUT'); ?>
                                 <div class="modal-body">
                                     <input type="hidden" id="loss_user_id" name="user_id">
                                     <div class="form-group">
@@ -190,9 +191,9 @@
     <!-- /.content -->
     </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('customjs')
+<?php $__env->startSection('customjs'); ?>
     <script>
         $(document).ready(function() {
             // Close modal when close button is clicked
@@ -222,13 +223,13 @@
                 e.preventDefault();
                 let userId = $('#user_id').val();
                 let profitAmount = $('#profit').val();
-                let url = "{{ url('user/update-profit') }}/" + userId;
+                let url = "<?php echo e(url('user/update-profit')); ?>/" + userId;
 
                 $.ajax({
                     url: url,
                     type: 'PUT',
                     data: {
-                        _token: "{{ csrf_token() }}",
+                        _token: "<?php echo e(csrf_token()); ?>",
                         profit: profitAmount
                     },
                     success: function(response) {
@@ -246,13 +247,13 @@
                 e.preventDefault();
                 let userId = $('#loss_user_id').val();
                 let lossAmount = $('#loss').val();
-                let url = "{{ url('user/update-loss') }}/" + userId;
+                let url = "<?php echo e(url('user/update-loss')); ?>/" + userId;
 
                 $.ajax({
                     url: url,
                     type: 'PUT',
                     data: {
-                        _token: "{{ csrf_token() }}",
+                        _token: "<?php echo e(csrf_token()); ?>",
                         loss: lossAmount
                     },
                     success: function(response) {
@@ -266,4 +267,6 @@
             });
         });
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH E:\laravel\tradeSoftware\resources\views/admin/users/index.blade.php ENDPATH**/ ?>

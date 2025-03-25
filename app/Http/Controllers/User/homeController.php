@@ -17,9 +17,9 @@ class homeController extends Controller
     {
 
         $user = Auth::user();
+        // dd($user);
 
-        $earnedbalance = $user->balance - $user->capital;
-        $earned = $earnedbalance + $user->profit;
+        $earned =  $user->profit;
 
 
         $withdrawls = Withdrawl::where('user_id', $user->id)->where('status', 'approved')->get();

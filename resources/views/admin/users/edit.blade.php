@@ -65,6 +65,14 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
+                                    <label for="reg_date">Registration Date</label>
+                                    <input type="date" name="reg_date" id="reg_date" class="form-control" 
+                                           value="{{ old('reg_date', $user->reg_date) }}">
+                                    <span class="text-danger">@error('reg_date'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
                                     <label for="profit">Profit</label>
                                     <input type="text" name="profit" id="profit" class="form-control" 
                                            value="{{ old('profit', $user->profit) }}">
