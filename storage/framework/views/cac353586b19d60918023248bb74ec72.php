@@ -20,7 +20,7 @@
                                 <form method="POST" action="<?php echo e(route('user.deposit.store')); ?>">
                                     <?php echo csrf_field(); ?>
                                     <div class="row">
-                                        <h3 class="text-center">Sender Account info</h3>
+                                        <h3 class="text-center">Sender Account Info</h3>
                                         <!-- Select Payment Method -->
                                         <div class="col-md-6 mb-3">
                                             <label for="payment_method">Select Payment Method</label>

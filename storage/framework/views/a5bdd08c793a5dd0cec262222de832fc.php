@@ -14,59 +14,67 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card border-0">
-                        <div class="card-header" style="display: flex; justify-content: center">
+                        <div class="card-header text-center">
                             <h4 class="card-title">Transactions Report</h4>
                         </div>
 
                         <div class="container">
                             <div class="row">
                                 <form method="GET" action="<?php echo e(route('ledger.history')); ?>" class="mb-3">
+                                    <?php echo csrf_field(); ?>
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <input type="date" name="from_date" value="<?php echo e($fromDate ?? ''); ?>"
-                                                class="form-control" placeholder="From Date">
+                                            <input type="date" name="from_date" value="<?php echo e(request('from_date')); ?>"
+                                                class="form-control" placeholder="From Date" required>
                                         </div>
                                         <div class="col-md-4">
-                                            <input type="date" name="to_date" value="<?php echo e($toDate ?? ''); ?>"
-                                                class="form-control" placeholder="To Date">
+                                            <input type="date" name="to_date" value="<?php echo e(request('to_date')); ?>"
+                                                class="form-control" placeholder="To Date" required>
                                         </div>
                                         <div class="col-md-2">
-                                            <button type="submit" class="btn btn-primary">Filter</button>
+                                            <button type="submit" class="btn btn-primary w-100">Filter</button>
                                         </div>
                                         <div class="col-md-2">
-                                            <a href="<?php echo e(route('ledger.history')); ?>" class="btn btn-secondary">Reset</a>
+                                            <a href="<?php echo e(route('ledger.history')); ?>" class="btn btn-secondary w-100">Reset</a>
                                         </div>
                                     </div>
                                 </form>
 
                                 <div class="mb-3">
                                     <h5>Total Profit: <?php echo e(number_format($totalProfit, 2)); ?></h5>
+                                    <h5>Total Withdrawals: <?php echo e(number_format($totalWithdrawals, 2)); ?></h5>
                                 </div>
                             </div>
-
                         </div>
-                        <table class="table table-hover border-0">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Date</th>
-                                    <th>Profit Earned</th>
-                                    <th>Balance</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $i = 1; ?>
-                                <?php $__currentLoopData = $ledger; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $entry): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover border-0">
+                                <thead>
                                     <tr>
-                                        <td><?php echo e($i); ?></td>
-                                        <td><?php echo e($entry->date); ?></td>
-                                        <td>$<?php echo e(number_format($entry->profit, 2)); ?></td>
-                                        <td>$<?php echo e(number_format($entry->balance, 2)); ?></td>
+                                        <th>#</th>
+                                        <th>Date</th>
+                                        <th>Profit Earned</th>
+                                        <th>Withdraw</th>
+                                        <th>Balance</th>
                                     </tr>
-                                    <?php $i++; ?>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php $__empty_1 = true; $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $entry): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                                        <tr>
+                                            <td><?php echo e($loop->iteration); ?></td>
+                                            <td><?php echo e($entry['date']); ?></td>
+                                            <td>$<?php echo e(number_format($entry['profit'], 2)); ?></td>
+                                            <td>$<?php echo e(number_format($entry['withdraw'], 2)); ?></td>
+                                            <td>$<?php echo e(number_format($entry['balance'], 2)); ?></td>
+                                        </tr>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                                        <tr>
+                                            <td colspan="5" class="text-center text-muted">No Data Found</td>
+                                        </tr>
+                                    <?php endif; ?>
+                                </tbody>
+                            </table>
+                        </div>  
                     </div>
                 </div>
             </div>

@@ -139,7 +139,7 @@
                                     <input type="hidden" id="user_id" name="user_id">
                                     <div class="form-group">
                                         <label for="profit">Profit Amount</label>
-                                        <input type="number" class="form-control" id="profit" name="profit" required>
+                                        <input type="text" class="form-control" id="profit" name="profit" required>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -170,7 +170,7 @@
                                     <input type="hidden" id="loss_user_id" name="user_id">
                                     <div class="form-group">
                                         <label for="loss">Loss Amount</label>
-                                        <input type="number" class="form-control" id="loss" name="loss"
+                                        <input type="text" class="form-control" id="loss" name="loss"
                                             required>
                                     </div>
                                 </div>

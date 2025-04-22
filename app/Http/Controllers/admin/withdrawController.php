@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class withdrawController extends Controller
 {
     public function index(){
-        $requests = Withdrawl::where('status', 'pending')->get();
+        $requests = Withdrawl::with('user')->where('status', 'pending')->get();
         return view('admin.withdrawrequests.index', compact('requests'));
     }
 
@@ -22,7 +22,7 @@ class withdrawController extends Controller
 
 
     public function approved(){
-        $withdraws = Withdrawl::where('status', 'approved')->get();
+        $withdraws = Withdrawl::with('user')->where('status', 'approved')->get();
 
         return view('admin.withdrawrequests.approvedwithdraw', compact('withdraws'));
     }

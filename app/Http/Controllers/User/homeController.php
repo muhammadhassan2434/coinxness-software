@@ -26,10 +26,10 @@ class homeController extends Controller
         $withdrawl = $withdrawls->sum('amount');
 
         $todayProfit = Ledger::where('user_id', $user->id)
-        ->whereDate('created_at', Carbon::today())
-        ->sum('profit');
+            ->whereDate('created_at', Carbon::today())
+            ->sum('profit');
 
-        return view('user.home', compact('user', 'earned', 'withdrawl','todayProfit'));
+        return view('user.home', compact('user', 'earned', 'withdrawl', 'todayProfit'));
     }
 
 
@@ -86,28 +86,77 @@ class homeController extends Controller
 
         return view('user.transactions.index', compact('transactions'));
     }
-
     public function ledgerHistory(Request $request)
     {
         $user = Auth::user();
-    
+
         // Get the from and to dates from the request
         $fromDate = $request->input('from_date');
         $toDate = $request->input('to_date');
-    
-        // Query ledger records based on the provided date range
+
+        // Get Withdrawals first (date-wise)
+        $withdrawals = Withdrawl::where('user_id', $user->id)
+            ->when($fromDate && $toDate, function ($query) use ($fromDate, $toDate) {
+                return $query->whereBetween('created_at', [$fromDate, $toDate]);
+            })
+            ->orderBy('created_at', 'asc')
+            ->get();
+
+        // Get Ledger entries after withdrawals
         $ledgerQuery = Ledger::where('user_id', $user->id);
-    
         if ($fromDate && $toDate) {
             $ledgerQuery->whereBetween('date', [$fromDate, $toDate]);
         }
-    
-        $ledger = $ledgerQuery->orderBy('date', 'desc')->get();
-    
-        // Calculate total profit and balance for the filtered records
+        $ledger = $ledgerQuery->orderBy('date', 'asc')->get();
+
+        // Merge and sort unique dates (Withdrawals first)
+        $dates = $withdrawals->pluck('created_at')->map(fn($date) => $date->toDateString())
+            ->merge($ledger->pluck('date'))
+            ->unique()
+            ->sort();
+
+        $previousBalance = 0;
+        $transactions = [];
+
+        foreach ($dates as $date) {
+            // Get Withdrawals for the date
+            $withdraw = $withdrawals->where('created_at', '>=', $date . ' 00:00:00')
+                ->where('created_at', '<=', $date . ' 23:59:59')
+                ->sum('amount');
+
+            // Get Profit Earned for the date
+            $profit = $ledger->where('date', $date)->sum('profit');
+
+            // Original balance before profit and withdrawals
+            $originalBalance = $ledger->where('date', $date)->sum('balance');
+
+            // Calculate New Balance: Previous Balance - Withdrawals + Current Day Profit
+            $newBalance = ($previousBalance ?: $originalBalance) - $withdraw + $profit;
+
+            // Save transaction data
+            $transactions[] = [
+                'date' => $date,
+                'withdraw' => $withdraw,
+                'profit' => $profit,
+                'balance' => $newBalance
+            ];
+
+            // Update previous balance for next iteration (profit added after withdrawal deduction)
+            $previousBalance = $newBalance;
+        }
+
+        // Calculate totals
         $totalProfit = $ledger->sum('profit');
-        $totalBalance = $ledger->sum('balance');
-    
-        return view('user.transactions.ledgerhistory', compact('ledger', 'totalProfit', 'totalBalance', 'fromDate', 'toDate'));
+        $totalWithdrawals = $withdrawals->sum('amount');
+        $totalBalance = $previousBalance; // Final calculated balance
+
+        return view('user.transactions.ledgerhistory', compact(
+            'transactions',
+            'totalProfit',
+            'totalBalance',
+            'totalWithdrawals',
+            'fromDate',
+            'toDate'
+        ));
     }
 }

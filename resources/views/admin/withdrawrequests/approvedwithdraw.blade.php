@@ -34,7 +34,7 @@
                                 @foreach ($withdraws as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td>{{ $item->name ?? 'N/A' }}</td>
+                                        <td>{{ $item->user->name ?? 'N/A' }}</td>
                                         <td>${{ $item->amount ?? 'N/A' }}</td>
                                         <td>{{ $item->updated_at ?? 'N/A' }}</td>
 
